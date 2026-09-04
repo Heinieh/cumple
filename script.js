@@ -67,7 +67,7 @@ createSparkles();
 
 // --- Countdown Timer ---
 // Fecha objetivo: 08 Septiembre 2026, 13:00 hrs
-const countdownDate = new Date("Sep 08, 2026 13:00:00").getTime();
+const countdownDate = new Date("Sep 06, 2026 15:00:00").getTime();
 
 const countdownTimer = setInterval(function() {
     const now = new Date().getTime();
