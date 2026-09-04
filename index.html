@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Estás Invitada! - Shirley Stephany</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Overlay for initial interaction to start audio -->
+    <div id="welcome-overlay" class="overlay">
+        <div class="overlay-content">
+            <h1 class="cursive-text">shhh... es una Sorpresa!</h1>
+            <p>Toca para abrir la invitación</p>
+            <button id="enter-btn" class="btn">Entrar</button>
+        </div>
+    </div>
+
+    <!-- Background and Sparkles -->
+    <div class="background-container">
+        <div id="sparkles-container"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="header">
+            <h2 class="cursive-text surprise-text">shhh... es una Sorpresa!</h2>
+            <p class="subtitle">ESTÁS INVITADO AL CUMPLEAÑOS DE</p>
+            <h1 class="cursive-text name-text">Shirley Stephany</h1>
+            <h1 class="cursive-text name-text">Mendoza Morillo</h1>
+        </header>
+
+        <section class="details">
+            <div class="date-time">
+                <div class="day">DOMINGO</div>
+                <div class="date-block">
+                    <span class="month">SEPT</span>
+                    <span class="day-num">06</span>
+                    <span class="year">2026</span>
+                </div>
+                <div class="time">15:00 HRS</div>
+            </div>
+
+            <div class="location">
+                <p>LUGAR DEL EVENTO</p>
+                <h3>Plaza de Armas de Trujillo</h3>
+                <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Trujillo" target="_blank"
+                    class="btn location-btn">Ver Ubicación</a>
+            </div>
+        </section>
+
+        <section class="countdown-section">
+            <p>FALTAN</p>
+            <div id="countdown" class="countdown">
+                <div class="time-box"><span id="days">00</span><small>Días</small></div>
+                <div class="time-box"><span id="hours">00</span><small>Hrs</small></div>
+                <div class="time-box"><span id="minutes">00</span><small>Min</small></div>
+                <div class="time-box"><span id="seconds">00</span><small>Seg</small></div>
+            </div>
+        </section>
+
+        <section class="rsvp-section">
+            <h2 class="cursive-text">RSVP</h2>
+            <p>Por favor confirma tu asistencia</p>
+            <!-- El formulario apunta a Formspree usando el email que diste. Luego crearás la cuenta para que funcione al 100% -->
+            <form id="rsvp-form" action="https://formspree.io/f/xrpglyoa" method="POST" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Tu Nombre Completo" required>
+                <select name="attendance" required>
+                    <option value="" disabled selected>¿Asistirás?</option>
+                    <option value="yes">Sí, ahí estaré</option>
+                    <option value="no">No podré asistir</option>
+                </select>
+
+                <div class="photo-upload">
+                    <label for="photo">Sube una foto de nuestra amistad (opcional)</label>
+                    <input type="file" id="photo" name="photo" accept="image/*">
+                    <div id="photo-preview" class="preview-container"></div>
+                </div>
+
+                <button type="submit" class="btn submit-btn">Confirmar Asistencia</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Hidden YouTube iframe for background music -->
+    <div id="player" style="display:none;"></div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
