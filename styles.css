@@ -345,6 +345,23 @@ input[type="text"]:focus, select:focus {
     margin-bottom: 15px;
 }
 
+/* Footer */
+.footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+.footer a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+}
+.footer a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
 /* Welcome Overlay */
 .overlay {
     position: fixed;
