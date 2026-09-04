@@ -23,16 +23,19 @@
 
     <!-- Background and Sparkles -->
     <div class="background-container">
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="assets/disco.mp4" type="video/mp4">
+        </video>
         <div id="sparkles-container"></div>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
-        <header class="header">
+        <header class="header" id="main-header">
             <h2 class="cursive-text surprise-text">shhh... es una Sorpresa!</h2>
             <p class="subtitle">ESTÁS INVITADO AL CUMPLEAÑOS DE</p>
-            <h1 class="cursive-text name-text">Shirley Stephany</h1>
-            <h1 class="cursive-text name-text">Mendoza Morillo</h1>
+            <h1 class="cursive-text name-text name-line1">Shirley Stephany</h1>
+            <h1 class="cursive-text name-text name-line2">Mendoza Morillo</h1>
         </header>
 
         <section class="details">
@@ -48,9 +51,9 @@
 
             <div class="location">
                 <p>LUGAR DEL EVENTO</p>
-                <h3>Plaza de Armas de Trujillo</h3>
-                <a href="https://maps.google.com/?q=Plaza+de+Armas+de+Trujillo" target="_blank"
-                    class="btn location-btn">Ver Ubicación</a>
+                <h3>Casa Laguna - Conache</h3>
+                <a href="https://maps.app.goo.gl/esnSf1eAnxvELWFu5" target="_blank" class="btn location-btn">Ver
+                    Ubicación</a>
             </div>
         </section>
 
@@ -67,8 +70,8 @@
         <section class="rsvp-section">
             <h2 class="cursive-text">RSVP</h2>
             <p>Por favor confirma tu asistencia</p>
-            <!-- El formulario apunta a Formspree usando el email que diste. Luego crearás la cuenta para que funcione al 100% -->
-            <form id="rsvp-form" action="https://formspree.io/f/xrpglyoa" method="POST" enctype="multipart/form-data">
+
+            <form id="rsvp-form" action="https://formspree.io/f/xrpglyoa" method="POST">
                 <input type="text" name="name" placeholder="Tu Nombre Completo" required>
                 <select name="attendance" required>
                     <option value="" disabled selected>¿Asistirás?</option>
@@ -76,18 +79,27 @@
                     <option value="no">No podré asistir</option>
                 </select>
 
+                <!-- Hidden input that will hold the Drive URL -->
+                <input type="hidden" name="foto_drive_url" id="photo-url" value="">
+
                 <div class="photo-upload">
                     <label for="photo">Sube una foto de nuestra amistad (opcional)</label>
-                    <input type="file" id="photo" name="photo" accept="image/*">
+                    <input type="file" id="photo" accept="image/*">
                     <div id="photo-preview" class="preview-container"></div>
                 </div>
 
-                <button type="submit" class="btn submit-btn">Confirmar Asistencia</button>
+                <button type="submit" id="submit-btn" class="btn submit-btn">Confirmar Asistencia</button>
             </form>
+
+            <div id="success-message" class="success-message" style="display: none;">
+                <h3 class="cursive-text">¡Gracias por confirmar!</h3>
+                <p>Hemos recibido tu respuesta.</p>
+                <p>¡Nos vemos en la fiesta! 🪩</p>
+            </div>
         </section>
     </div>
 
-    <!-- Hidden YouTube iframe for background music -->
+
     <div id="player" style="display:none;"></div>
 
     <script src="https://www.youtube.com/iframe_api"></script>
